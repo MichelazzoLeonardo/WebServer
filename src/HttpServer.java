@@ -29,11 +29,15 @@ public class HttpServer {
         });
 
         while (true) {
-            System.out.println("now accepting...");
-            s = ss.accept();
-            System.out.println("starting thread...");
-            thread.start();
-            System.out.println("thread finished...");
+            try {
+                System.out.println("now accepting...");
+                s = ss.accept();
+                System.out.println("starting thread...");
+                thread.start();
+                System.out.println("thread finished...");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -52,7 +56,7 @@ public class HttpServer {
                         "    <title>Web Server</title>\n" +
                         "</head>\n" +
                         "<body>\n" +
-                        "<h1>Home Page</h1>" +
+                        "<h1>Bravo Gigi</h1>" +
                         "</body>\n" +
                         "</html>";
 
